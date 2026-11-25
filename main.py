@@ -63,10 +63,12 @@ def write_excuse(path):
 
 
 def run():
-    """Write the excuse and say how long it is."""
+    """Write the excuse and say how long it is, in characters and
+    words, so the run itself is evidence the gate limits hold."""
     line = write_excuse(ENTRY_OUTPUT)
     sys.stdout.write(
-        "Wrote %d chars to %s\n" % (len(line), ENTRY_OUTPUT)
+        "Wrote %d chars, %d words to %s\n"
+        % (len(line), len(line.split()), ENTRY_OUTPUT)
     )
     return 0
 
